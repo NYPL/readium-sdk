@@ -51,6 +51,33 @@ ndk-compile.sh build
 
 Everything else should be set up appropriately by that script.
 
+### Maven Packages
+
+Once the above compilation step has been performed, to produce the
+native libraries, Maven packages can be produced by executing:
+
+```bash
+mvn clean package
+```
+
+These packages can be referenced from your application's build
+with the following dependency:
+
+```
+<dependency>
+  <groupId>org.readium</groupId>
+  <artifactId>readium-sdk-android-runtime</artifactId>
+  <version>0.20.0</version>
+</dependency>
+<dependency>
+  <groupId>org.readium</groupId>
+  <artifactId>libepub3</artifactId>
+  <version>0.20.0</version>
+  <classifier>armeabi-v7a</classifier>
+  <type>so</type>
+</dependency>
+```
+
 ### Linux Notes (Ubuntu 13.04 64bit):
 
 
