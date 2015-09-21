@@ -269,7 +269,7 @@ shared_ptr<xml::Document> ManifestItem::ReferencedDocument() const
     // or we pass NULL (in which case the parser auto-detects encoding)
     const char * encoding = nullptr;
     //const char * encoding = "utf-8";
-	
+
 	xmlDocPtr raw;
     if ( _mediaType == "text/html" ) {
         raw = htmlReadMemory((const char*)docBuf, resbuflen, path.c_str(), encoding, flags);
@@ -281,7 +281,7 @@ shared_ptr<xml::Document> ManifestItem::ReferencedDocument() const
 	
     if (docBuf)
         free(docBuf);
-	
+
 #elif EPUB_USE(WIN_XML)
 	// TODO: filtering referenced document through Content Filters
 	// is not yet supported on Windows
