@@ -28,6 +28,7 @@
 #include <ePub3/switch_preprocessor.h>
 #include <ePub3/object_preprocessor.h>
 #include <ePub3/PassThroughFilter.h>
+#include <ePub3/MarlinContentModule.h>
 
 EPUB3_BEGIN_NAMESPACE
 
@@ -52,6 +53,7 @@ void PopulateFilterManager()
         // PassThroughFilter::Register();
         SwitchPreprocessor::Register();
         ObjectPreprocessor::Register();
+        MarlinContentModule::Register();
     });
 }
 
