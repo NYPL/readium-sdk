@@ -127,6 +127,23 @@ LOCAL_C_INCLUDES += \
 
 include $(BUILD_STATIC_LIBRARY)
 
+
+# urms
+
+
+include $(CLEAR_VARS)
+
+URMS_LIB_PATH := $(THIRD_PARTY_PATH)/marlin-sdk/lib/$(TARGET_ARCH_ABI)
+$(warning $(URMS_LIB_PATH))
+
+LOCAL_MODULE := urms
+LOCAL_SRC_FILES := $(URMS_LIB_PATH)/liburms.so
+#LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/include
+#include $(PREBUILT_SHARED_LIBRARY)
+
+
+
+
 ###########################################################
 # epub3
 
@@ -151,7 +168,8 @@ ifeq ($(TARGET_ARCH_ABI),x86)
 endif
 
 LOCAL_STATIC_LIBRARIES := xml2
-LOCAL_LDLIBS := -lz -landroid -llog
+LOCAL_LDLIBS := -lz -landroid -llog -lurms -L$(URMS_LIB_PATH)
+
 LOCAL_C_INCLUDES += \
         $(LOCAL_PATH)/include \
         $(LOCAL_PATH)/include/ePub3 \

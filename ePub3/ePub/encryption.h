@@ -55,13 +55,13 @@ public:
 public:
     ///
     /// Creates a new EncryptionInfo with no details filled in.
-    EncryptionInfo(ContainerPtr owner) : OwnedBy(owner), _algorithm(), _path(), _compression_method(), _uncompressed_size(), _keyRetrievalMethodType() {}
+    EncryptionInfo(ContainerPtr owner) : OwnedBy(owner), _algorithm(), _path()/*, _compression_method(), _uncompressed_size(), _keyRetrievalMethodType()*/{}
     ///
     /// Copy constructor.
-    EncryptionInfo(const EncryptionInfo& o) : OwnedBy(o), _algorithm(o._algorithm), _path(o._path), _compression_method(o._compression_method), _uncompressed_size(o._uncompressed_size), _keyRetrievalMethodType(o._keyRetrievalMethodType) {}
+    EncryptionInfo(const EncryptionInfo& o) : OwnedBy(o), _algorithm(o._algorithm), _path(o._path)/*, _compression_method(o._compression_method), _uncompressed_size(o._uncompressed_size), _keyRetrievalMethodType(o._keyRetrievalMethodType)*/ {}
     ///
     /// Move constructor.
-    EncryptionInfo(EncryptionInfo&& o) : OwnedBy(std::move(o)), _algorithm(std::move(o._algorithm)), _path(std::move(o._path)),  _compression_method(std::move(o._compression_method)), _uncompressed_size(std::move(o._uncompressed_size)), _keyRetrievalMethodType(std::move(o._keyRetrievalMethodType)) {}
+    EncryptionInfo(EncryptionInfo&& o) : OwnedBy(std::move(o)), _algorithm(std::move(o._algorithm)), _path(std::move(o._path))/*,  _compression_method(std::move(o._compression_method)), _uncompressed_size(std::move(o._uncompressed_size)), _keyRetrievalMethodType(std::move(o._keyRetrievalMethodType))*/ {}
     virtual ~EncryptionInfo() {}
     
     
@@ -85,6 +85,7 @@ public:
     virtual void                    SetAlgorithm(const algorithm_type& alg)         { _algorithm = alg; }
     virtual void                    SetAlgorithm(algorithm_type&& alg)              { _algorithm = alg; }
     
+/*
     ///
     /// Returns the type of the ds:RetrievalMethod of an Encrypted Key as an URI.
     /// @see http://www.w3.org/TR/2001/WD-xmlenc-core-20010626/#sec-ds:RetrievalMethod
@@ -94,6 +95,7 @@ public:
     virtual void                    SetKeyRetrievalMethodType(const string& keyRetrievalMethodType) { _keyRetrievalMethodType = keyRetrievalMethodType; }
     virtual void                    SetKeyRetrievalMethodType(string&& keyRetrievalMethodType)      { _keyRetrievalMethodType = keyRetrievalMethodType; }
 
+*/
     ///
     /// Returns the Container-relative path to the encrypted resource.
     virtual const string&           Path()                                  const   { return _path; }
@@ -102,22 +104,28 @@ public:
     virtual void                    SetPath(const string& path)                     { _path = path; }
     virtual void                    SetPath(string&& path)                          { _path = path; }
     
+/*
     // Added by DRM inside T.H. Kim on 2015-04-15
     // Return additional information for the compressed and encrypted contents
     virtual const string&           CompressionMethod()                     const   { return _compression_method; }
     virtual const string&           UnCompressedSize()                      const   { return _uncompressed_size;}
 
+*/
 
 protected:
     algorithm_type  _algorithm;              ///< The algorithm identifier, as per XML-ENC or OCF.
+/*
     string          _keyRetrievalMethodType; ///< The method used to retrieve the encryption key (eg. used for LCP)
+*/
     string          _path;                   ///< The Container-relative path to an encrypted resource.
 
+/*
     // Added by DRM inside T.H. Kim on 2015-04-15
     // To get additional information for the compressed and encrypted contents
     string          _compression_method;  //  Compression method : 0(no compression), 8(deflated)
     string          _uncompressed_size;   //  Uncompressed size of the content
 
+*/
 };
 
 EPUB3_END_NAMESPACE

@@ -96,6 +96,10 @@ void *PassThroughFilter::FilterData(FilterContext *context, void *data, size_t l
 
     if (!byteStream->IsOpen())
     {
+        HandleContentFilterError(
+                                 std::string(PASS_THROUGH_FILTER_ID),
+                                 ContentFilterError::InputStreamCannotBeOpened,
+                                 std::string("Input ByteStream is not opened"));
         return nullptr;
     }
 

@@ -39,22 +39,28 @@ bool EncryptionInfo::ParseXML(shared_ptr<xml::Node> node)
 #endif
     
     auto strings = xpath.Strings("./enc:EncryptionMethod/@Algorithm", node);
+
+   printf("######## EncryptionMethod\n");
+
     if ( strings.empty() )
         return false;
     
     _algorithm = strings[0];
 
+/*
     strings = xpath.Strings("./ds:KeyInfo/ds:RetrievalMethod/@Type", node);
     if ( !strings.empty() ) {
         _keyRetrievalMethodType = strings[0];
     }
     
+*/
     strings = xpath.Strings("./enc:CipherData/enc:CipherReference/@URI", node);
     if ( strings.empty() )
         return false;
     
     _path = strings[0];
     
+/*
     strings = xpath.Strings("./enc:EncryptionProperties/enc:EncryptionProperty/ep:Compression/@Method", node);
     if (!strings.empty())
     {
@@ -77,6 +83,7 @@ bool EncryptionInfo::ParseXML(shared_ptr<xml::Node> node)
         _uncompressed_size = strings[0];
     }
 
+*/
     return true;
 }
 
