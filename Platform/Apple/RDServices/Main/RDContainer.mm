@@ -88,17 +88,16 @@
 		ePub3::InitializeSdk();
 		ePub3::PopulateFilterManager();
 		
-        //[[RDLCPService sharedService] registerContentFilter];
-//		if ([delegate respondsToSelector:@selector(containerRegisterContentFilters:)]) {
-//			[delegate containerRegisterContentFilters:self];
-//		}
-        
-		if ([delegate respondsToSelector:@selector(containerRegisterContentModules:)]) {
-			[delegate containerRegisterContentModules:self];
+		if ([delegate respondsToSelector:@selector(containerRegisterContentFilters:)]) {
+			[delegate containerRegisterContentFilters:self];
 		}
         
-        m_path = path;
-        
+               //Content Modules for each DRM library, if any, should be registered in the function.
+               if ([delegate respondsToSelector:@selector(containerRegisterContentModules:)]) {
+                       [delegate containerRegisterContentModules:self];
+                }
+
+		m_path = path;
         try {
             m_container = ePub3::Container::OpenContainer(path.UTF8String);
         }
