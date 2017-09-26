@@ -66,49 +66,49 @@
 
         }
 
-          auto stream = container2->ReadStreamAtPath("META-INF/rights.xml");
-          if (stream == nullptr)
-          {
-#if FUTURE_ENABLED
-              return make_ready_future<ContainerPtr>(ContainerPtr(nullptr));
-#else
-              return nullptr;
-#endif //FUTURE_ENABLED
-          }
-          
-          ssize_t file_size = stream->BytesAvailable();
-          if (file_size == 0) {
-#if FUTURE_ENABLED
-              return make_ready_future<ContainerPtr>(ContainerPtr(nullptr));
-#else
-              return nullptr;
-#endif //FUTURE_ENABLED
-          }
-          unsigned char *file_content = (unsigned char *)malloc(file_size + 1);
-          file_content[file_size] = 0;
-          
-          ssize_t bytes_read = stream->ReadBytes(file_content, file_size);
-          if (bytes_read != file_size)
-          {
-              free(file_content);
-#if FUTURE_ENABLED
-              return make_ready_future<ContainerPtr>(ContainerPtr(nullptr));
-#else
-              return nullptr;
-#endif //FUTURE_ENABLED
-          }
-          
-          if ( std::string(reinterpret_cast<const char*>(file_content)).find(MARLIN_RIGHTS_ID) == std::string::npos )
-          {
-              free(file_content);
-#if FUTURE_ENABLED
-              return make_ready_future<ContainerPtr>(ContainerPtr(nullptr));
-#else
-              return nullptr;
-#endif //FUTURE_ENABLED
-          }
-
-          free(file_content);
+//          auto stream = container2->ReadStreamAtPath("META-INF/rights.xml");
+//          if (stream == nullptr)
+//          {
+//#if FUTURE_ENABLED
+//              return make_ready_future<ContainerPtr>(ContainerPtr(nullptr));
+//#else
+//              return nullptr;
+//#endif //FUTURE_ENABLED
+//          }
+//          
+//          ssize_t file_size = stream->BytesAvailable();
+//          if (file_size == 0) {
+//#if FUTURE_ENABLED
+//              return make_ready_future<ContainerPtr>(ContainerPtr(nullptr));
+//#else
+//              return nullptr;
+//#endif //FUTURE_ENABLED
+//          }
+//          unsigned char *file_content = (unsigned char *)malloc(file_size + 1);
+//          file_content[file_size] = 0;
+//          
+//          ssize_t bytes_read = stream->ReadBytes(file_content, file_size);
+//          if (bytes_read != file_size)
+//          {
+//              free(file_content);
+//#if FUTURE_ENABLED
+//              return make_ready_future<ContainerPtr>(ContainerPtr(nullptr));
+//#else
+//              return nullptr;
+//#endif //FUTURE_ENABLED
+//          }
+//          
+//          if ( std::string(reinterpret_cast<const char*>(file_content)).find(MARLIN_RIGHTS_ID) == std::string::npos )
+//          {
+//              free(file_content);
+//#if FUTURE_ENABLED
+//              return make_ready_future<ContainerPtr>(ContainerPtr(nullptr));
+//#else
+//              return nullptr;
+//#endif //FUTURE_ENABLED
+//          }
+//
+//          free(file_content);
 
 #if FUTURE_ENABLED
        return make_ready_future<ContainerPtr>(ContainerPtr(container2));
