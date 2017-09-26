@@ -37,8 +37,8 @@ void InitializeSdk()
     static std::once_flag __once;
     std::call_once(__once, []{
         Archive::Initialize();
-        FilterManager::Instance()->SetInstance(new FilterManagerImpl());
     });
+    FilterManager::Instance()->SetInstance(new FilterManagerImpl());
 }
 
 void PopulateFilterManager()
