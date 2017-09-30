@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03CEE82A1F32132000F62638 /* marlin_decrypter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03CEE8291F32132000F62638 /* marlin_decrypter.cpp */; };
+		03CEE82C1F32134E00F62638 /* marlin_decrypter.h in Headers */ = {isa = PBXBuildFile; fileRef = 03CEE82B1F32134E00F62638 /* marlin_decrypter.h */; };
+		03CEE8301F32178000F62638 /* marlin_decrypter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03CEE8291F32132000F62638 /* marlin_decrypter.cpp */; };
+		03CEE8321F3217D200F62638 /* filter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03CEE8311F3217D200F62638 /* filter.cpp */; };
+		03CEE8331F3217DC00F62638 /* filter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03CEE8311F3217D200F62638 /* filter.cpp */; };
+		03CEE8601F32201A00F62638 /* MarlinContentModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03CEE85E1F32201A00F62638 /* MarlinContentModule.cpp */; };
+		03CEE8611F32201A00F62638 /* MarlinContentModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 03CEE85F1F32201A00F62638 /* MarlinContentModule.h */; };
+		03CEE8621F32202400F62638 /* MarlinContentModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03CEE85E1F32201A00F62638 /* MarlinContentModule.cpp */; };
 		1ED0083B17A9B7F800819EBD /* byte_buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1ED0083A17A9B7F800819EBD /* byte_buffer.cpp */; };
 		1ED0083C17A9B7F800819EBD /* byte_buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1ED0083A17A9B7F800819EBD /* byte_buffer.cpp */; };
 		1ED0084417A9D6E800819EBD /* filter_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1ED0084317A9D6E800819EBD /* filter_manager.cpp */; };
@@ -438,6 +446,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03CEE8291F32132000F62638 /* marlin_decrypter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = marlin_decrypter.cpp; sourceTree = "<group>"; };
+		03CEE82B1F32134E00F62638 /* marlin_decrypter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = marlin_decrypter.h; sourceTree = "<group>"; };
+		03CEE8311F3217D200F62638 /* filter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = filter.cpp; sourceTree = "<group>"; };
+		03CEE85E1F32201A00F62638 /* MarlinContentModule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MarlinContentModule.cpp; sourceTree = "<group>"; };
+		03CEE85F1F32201A00F62638 /* MarlinContentModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarlinContentModule.h; sourceTree = "<group>"; };
 		1ED0083917A9B7A000819EBD /* byte_buffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = byte_buffer.h; sourceTree = "<group>"; };
 		1ED0083A17A9B7F800819EBD /* byte_buffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = byte_buffer.cpp; sourceTree = "<group>"; };
 		1ED0084217A9D4A400819EBD /* filter_manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = filter_manager.h; sourceTree = "<group>"; };
@@ -1100,6 +1113,7 @@
 				A250D24D05706C9BB1AA54ED /* filter_chain_byte_stream_range.h */,
 				A250DFDBD90C7E9C632B1E00 /* filter_chain_byte_stream.cpp */,
 				A250D26DB00356B591AEFC29 /* filter_chain_byte_stream.h */,
+				03CEE8311F3217D200F62638 /* filter.cpp */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -1107,6 +1121,8 @@
 		AB6AC71E1684B698000DE924 /* Encryption */ = {
 			isa = PBXGroup;
 			children = (
+				03CEE82B1F32134E00F62638 /* marlin_decrypter.h */,
+				03CEE8291F32132000F62638 /* marlin_decrypter.cpp */,
 				AB6AC7231684B93C000DE924 /* font_obfuscation.cpp */,
 				AB6AC7241684B93C000DE924 /* font_obfuscation.h */,
 			);
@@ -1116,6 +1132,8 @@
 		AB8C796B182190DB0013054F /* ContentModule */ = {
 			isa = PBXGroup;
 			children = (
+				03CEE85E1F32201A00F62638 /* MarlinContentModule.cpp */,
+				03CEE85F1F32201A00F62638 /* MarlinContentModule.h */,
 				832DB29A1E682CB100415B52 /* content_module_exception.h */,
 				AB8C796C182190F10013054F /* content_module.h */,
 				AB8C796D1821917F0013054F /* content_module_manager.h */,
@@ -1798,6 +1816,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03CEE82C1F32134E00F62638 /* marlin_decrypter.h in Headers */,
 				ABB18FE51656863300CFC651 /* Config.h in Headers */,
 				ABB18FE71656863300CFC651 /* zip.h in Headers */,
 				ABB1901D1656863300CFC651 /* zipint.h in Headers */,
@@ -1813,6 +1832,7 @@
 				ABAB94B516653EE80018D451 /* dtd.h in Headers */,
 				ABAB94BA16654FB20018D451 /* archive.h in Headers */,
 				ABAB94C0166560980018D451 /* zip_archive.h in Headers */,
+				03CEE8611F32201A00F62638 /* MarlinContentModule.h in Headers */,
 				ABAB94C71666AC6D0018D451 /* container.h in Headers */,
 				ABAB94CB1666AEA10018D451 /* package.h in Headers */,
 				ABAB94D31667B6FD0018D451 /* archive_xml.h in Headers */,
@@ -2057,6 +2077,7 @@
 				ABA4BB0716ADF64400161B77 /* mkstemp.c in Sources */,
 				ABA4BB0816ADF64400161B77 /* zip_add.c in Sources */,
 				ABB394C31836808D00F19CA7 /* future.cpp in Sources */,
+				03CEE8621F32202400F62638 /* MarlinContentModule.cpp in Sources */,
 				ABA4BB0916ADF64400161B77 /* zip_add_dir.c in Sources */,
 				ABA4BB0A16ADF64400161B77 /* zip_close.c in Sources */,
 				ABA4BB0B16ADF64400161B77 /* zip_delete.c in Sources */,
@@ -2142,6 +2163,7 @@
 				ABA4BB5516ADF64400161B77 /* element.cpp in Sources */,
 				ABA4BB5616ADF64400161B77 /* xpath.cpp in Sources */,
 				ABA4BB5716ADF64400161B77 /* base.cpp in Sources */,
+				03CEE8301F32178000F62638 /* marlin_decrypter.cpp in Sources */,
 				ABA4BB5816ADF64400161B77 /* io.cpp in Sources */,
 				ABA4BB5916ADF64400161B77 /* schema.cpp in Sources */,
 				ABA4BB5A16ADF64400161B77 /* ns.cpp in Sources */,
@@ -2151,6 +2173,7 @@
 				AB95448916BAF11000EFD2FD /* object_preprocessor.cpp in Sources */,
 				ABA88FBF16C062BF00F2014B /* media_support_info.cpp in Sources */,
 				ABA88FC416C1534900F2014B /* byte_stream.cpp in Sources */,
+				03CEE8331F3217DC00F62638 /* filter.cpp in Sources */,
 				3418BA7D16C4151E009AA7EF /* ring_buffer.cpp in Sources */,
 				ABB3951D1847E5FD00F19CA7 /* epub_collection.cpp in Sources */,
 				AB8C7970182191A20013054F /* content_module_manager.cpp in Sources */,
@@ -2177,6 +2200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03CEE82A1F32132000F62638 /* marlin_decrypter.cpp in Sources */,
 				ABB18FE61656863300CFC651 /* mkstemp.c in Sources */,
 				AB718C04184CEEA900F86C6B /* xml_bridge_dtrace_probes.d in Sources */,
 				ABB18FE81656863300CFC651 /* zip_add.c in Sources */,
@@ -2209,6 +2233,7 @@
 				AB8C79741821A2160013054F /* credential_request.cpp in Sources */,
 				ABB190001656863300CFC651 /* zip_get_archive_comment.c in Sources */,
 				ABB190011656863300CFC651 /* zip_get_archive_flag.c in Sources */,
+				03CEE8321F3217D200F62638 /* filter.cpp in Sources */,
 				AB8C796F182191A20013054F /* content_module_manager.cpp in Sources */,
 				ABB190021656863300CFC651 /* zip_get_file_comment.c in Sources */,
 				ABB190031656863300CFC651 /* zip_get_name.c in Sources */,
@@ -2289,6 +2314,7 @@
 				ABA4BA9916A7414000161B77 /* url_parse.cc in Sources */,
 				ABA4BA9D16A7414000161B77 /* url_parse_file.cc in Sources */,
 				ABA4BAA516A7414000161B77 /* url_util.cc in Sources */,
+				03CEE8601F32201A00F62638 /* MarlinContentModule.cpp in Sources */,
 				ABA4BAAF16A7518B00161B77 /* url_canon_cpp11.cc in Sources */,
 				AB95447D16B9730B00EFD2FD /* content_handler.cpp in Sources */,
 				AB95448316BAD32000EFD2FD /* switch_preprocessor.cpp in Sources */,

@@ -28,6 +28,7 @@
 #include <ePub3/switch_preprocessor.h>
 #include <ePub3/object_preprocessor.h>
 #include <ePub3/PassThroughFilter.h>
+#include <ePub3/MarlinContentModule.h>
 
 EPUB3_BEGIN_NAMESPACE
 
@@ -36,8 +37,8 @@ void InitializeSdk()
     static std::once_flag __once;
     std::call_once(__once, []{
         Archive::Initialize();
-        FilterManager::Instance()->SetInstance(new FilterManagerImpl());
     });
+    FilterManager::Instance()->SetInstance(new FilterManagerImpl());
 }
 
 void PopulateFilterManager()
@@ -52,6 +53,7 @@ void PopulateFilterManager()
         // PassThroughFilter::Register();
         SwitchPreprocessor::Register();
         ObjectPreprocessor::Register();
+        MarlinContentModule::Register();
     });
 }
 
