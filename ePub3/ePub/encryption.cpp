@@ -40,7 +40,7 @@ bool EncryptionInfo::ParseXML(shared_ptr<xml::Node> node)
     
     auto strings = xpath.Strings("./enc:EncryptionMethod/@Algorithm", node);
 
-   printf("######## EncryptionMethod\n");
+//   printf("######## EncryptionMethod\n");
 
     if ( strings.empty() )
         return false;

@@ -37,12 +37,12 @@
 
 @optional
 
-///**
-// * Called just after the container populated the default filters into
-// * the filter manager.
-// * You can implement this to register custom filters.
-// */
-//- (void)containerRegisterContentFilters:(RDContainer *)container;
+/**
+ * Called just after the container populated the default filters into
+ * the filter manager.
+ * You can implement this to register custom filters.
+ */
+- (void)containerRegisterContentFilters:(RDContainer *)container;
 
 /**
  * You can implement this to register content modules.
