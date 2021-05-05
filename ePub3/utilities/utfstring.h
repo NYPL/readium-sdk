@@ -546,7 +546,10 @@ public:
     {
         _base.swap(str._base);
     }
-    
+
+// ignoring this since we are going to deprecate these with R2
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wreturn-stack-address"
     EPUB3_EXPORT std::u32string utf32string() const;
     inline const_u4pointer utf32() const { return utf32string().c_str(); }
     
@@ -555,7 +558,8 @@ public:
 
 	EPUB3_EXPORT std::wstring wchar_string() const;
 	inline const wchar_t* wchar_str() const { return wchar_string().c_str(); }
-    
+#pragma clang diagnostic pop
+
     __base::const_pointer c_str() const _NOEXCEPT { return _base.c_str(); }
     __base::const_pointer data() const _NOEXCEPT { return _base.data(); }
     
