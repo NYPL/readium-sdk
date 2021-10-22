@@ -2341,6 +2341,7 @@
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = NO;
 				DSTROOT = /tmp/ePub3_iOS.dst;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "../../ePub3-iOS/ePub3-iOS-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
