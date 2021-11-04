@@ -1933,7 +1933,7 @@
 		ABA72C1B1655382E003125FF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1310;
 				ORGANIZATIONNAME = "The Readium Foundation and contributors";
 			};
 			buildConfigurationList = ABA72C1E1655382E003125FF /* Build configuration list for PBXProject "ePub3" */;
