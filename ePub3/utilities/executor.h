@@ -568,6 +568,8 @@ struct __timed_closure_less;
 typedef std::pair<std::chrono::system_clock::time_point, executor::closure_type>                timed_closure;
 typedef std::priority_queue<timed_closure, std::vector<timed_closure>, __timed_closure_less>    timed_closure_queue;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 struct __timed_closure_less : std::binary_function<timed_closure, timed_closure, bool>
 {
     inline FORCE_INLINE
@@ -576,6 +578,7 @@ struct __timed_closure_less : std::binary_function<timed_closure, timed_closure,
             return __lhs.first < __rhs.first;
         }
 };
+#pragma clang diagnostic pop
 
 class __thread_pool_impl_stdcpp
 {
