@@ -70,12 +70,15 @@ public:
         
     };
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     struct PriorityOrderHighToLow : public std::binary_function<Record, Record, bool>
     {
         bool operator()(const Record& __a, const Record& __b) {
             return __b < __a;
         }
     };
+#pragma diagnostic pop
     
     virtual ~FilterManager() {}
     
